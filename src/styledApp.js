@@ -16,13 +16,11 @@ export const TrocaTela = styled.button`
     right:200px;
     top:200px;
     width:150px;
-    padding-bottom: 10px;
-
     &:hover{
         box-shadow: 5px 2px 20px red;
     }
 
-    @media(max-width: 411px){
+    @media(max-width: 415px){
         right:50px;
         top:60px;
         width:120px;
@@ -33,7 +31,7 @@ export const TrocaTela = styled.button`
 export const TamanhoMatchs = styled.img`
     width:140px;
 
-    @media(max-width: 411px){
+    @media(max-width: 500px){
         display:none
     }
 `
@@ -52,7 +50,7 @@ export const Limpar = styled.button`
         box-shadow: 5px 2px 20px #01DFD7;
     }
 
-    @media(max-width: 411px){
+    @media(max-width: 500px){
         display: none;
     }
 `
@@ -63,7 +61,7 @@ export const LimparMobile = styled.button`
     top: 60px;
     border: none;
 
-    @media(min-width: 412px){
+    @media(min-width: 500px){
         display: none;
     }
 `
@@ -79,7 +77,7 @@ export const Principal = styled.div`
     align-items: center;
     color: white;
 
-    @media(max-width: 411px){
+    @media(min-width: 500px){
         margin-top: 80px;
     }
 `

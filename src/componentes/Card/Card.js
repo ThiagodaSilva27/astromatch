@@ -1,15 +1,17 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { BASE_URL } from '../../constantes/requisicoes'
-import {Principal} from '../../styledApp'
-import {CardTotal, 
-        TamanhoImagem, 
-        BotaoAprovar, 
-        BotaoReprovar, 
-        Mensagem,
-        Descricao,
-        ComCoracao,
-        Rejeitar
+import { Principal } from '../../styledApp'
+import {
+    CardTotal,
+    TamanhoImagem,
+    BotaoAprovar,
+    BotaoReprovar,
+    Mensagem,
+    Descricao,
+    ComCoracao,
+    Rejeitar,
+    ContainerBotao
 } from './EstiloCard'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import ImgCoracao from '../../img/coracao.png'
@@ -25,38 +27,35 @@ function Card() {
 
     const personalidades = () => {
         axios.get(`${BASE_URL}person`)
-        .then((resposta)=>{
-            setIdM(resposta.data.profile.id)
-            setFoto(resposta.data.profile.photo)
-            setNome(resposta.data.profile.name)
-            setIdade(resposta.data.profile.age)
-            setDescricao(resposta.data.profile.bio)
-        })
-        .catch((erro) => {
-            console.log(erro)
-        })
+            .then((resposta) => {
+                setIdM(resposta.data.profile.id)
+                setFoto(resposta.data.profile.photo)
+                setNome(resposta.data.profile.name)
+                setIdade(resposta.data.profile.age)
+                setDescricao(resposta.data.profile.bio)
+            })
+            .catch((erro) => {
+                console.log(erro)
+            })
     }
 
     useEffect(() => {
         personalidades()
-    },[])
+    }, [])
 
     const aprovar = (idAtual) => {
-        
         setIdM(idAtual)
-
         const body = {
             id: idAtual,
-            choice: true 
+            choice: true
         }
         axios.post(`${BASE_URL}choose-person`, body)
-        .then((resposta)=>{
-            console.logo(resposta.data)
-        })
-        .catch((erro) => {
-            console.log(erro)
-        })
-
+            .then((resposta) => {
+                console.logo(resposta.data)
+            })
+            .catch((erro) => {
+                console.log(erro)
+            })
         personalidades()
     }
 
@@ -67,46 +66,50 @@ function Card() {
             choice: false
         }
         axios.post(`${BASE_URL}choose-person`, body)
-        .then((resposta)=>{
-            console.logo(resposta.data)
-        })
-        .catch((erro) => {
-            console.log(erro)
-        })
-
-       
+            .then((resposta) => {
+                console.logo(resposta.data)
+            })
+            .catch((erro) => {
+                console.log(erro)
+            })
         personalidades()
     }
 
 
-  return (
-    <Principal>
-        {nome ?
-        <CardTotal>
-            <TamanhoImagem src={foto} alt="foto"/>
-            <p>{nome}</p>
-            <p>Idade: {idade}</p>
-            <Descricao>Descrição: {descricao}</Descricao> 
-        </CardTotal>:
-         
-         <CardTotal>
-             <Mensagem>
-             A lista gerada para você acabou, veja ao lado as personalidades que deram match. Ou atualize
-             </Mensagem>
-        </CardTotal>}
+    return (
+        <Principal>
+            {nome ?
+                <CardTotal>
+                    <TamanhoImagem src={foto} alt="foto" />
+                    <p>{nome}</p>
+                    <p>Idade: {idade}</p>
+                    <Descricao>Descrição: {descricao}</Descricao>
+                    <ContainerBotao>
+                    <BotaoReprovar onClick={() => { reprovar(idM) }}>
+                        {loading ?
+                            <CircularProgress size={50} color="action" />
+                            :
+                            <Rejeitar src={ImgRejeitar} alt="reprovar" />}
+                    </BotaoReprovar>
+                    <BotaoAprovar onClick={() => { aprovar(idM) }}>
+                        {loading ?
+                            <CircularProgress size={50} />
+                            :
+                            <ComCoracao src={ImgCoracao} alt="coração" />}
+                    </BotaoAprovar>
+                    
+                    </ContainerBotao>
+                </CardTotal> :
 
-        <BotaoReprovar onClick={() => {reprovar(idM)}}>
-            {loading ? <CircularProgress size={50} color="action" /> : <Rejeitar src={ImgRejeitar} alt="reprovar"/>}
-        </BotaoReprovar>
-
-        <div>
-        <BotaoAprovar onClick={() => {aprovar(idM)}}>
-            {loading ? <CircularProgress size={50} /> : <ComCoracao  src={ImgCoracao} alt="coração"/>}
-        </BotaoAprovar>
-        </div>
-        
-    </Principal>
-  );
+                <CardTotal>
+                    <Mensagem>
+                        A lista gerada para você acabou,
+                        veja ao lado as personalidades que deram match.
+                        Ou atualize
+                    </Mensagem>
+                </CardTotal>}
+        </Principal>
+    )
 }
 
 export default Card;

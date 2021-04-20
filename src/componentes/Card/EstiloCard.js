@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 
 export const CardTotal = styled.div`
+    margin-top: 25px;
     width:25rem;
-    height: 30rem;
+    height: 35rem;
     padding-bottom:3.125rem;
     border: 1px solid gray;
     border-radius: 3.125rem;
@@ -15,7 +16,7 @@ export const CardTotal = styled.div`
     }
 `
 
-export const TamanhoImagem = styled.img `
+export const TamanhoImagem = styled.img`
   width:25rem;
   height:20rem;
   border-radius: 3.125rem;
@@ -40,91 +41,38 @@ export const Descricao = styled.p`
 
 export const BotaoAprovar = styled.button`
     border: none;
-    position:absolute;
-    right: 40rem;
-    top: 33.75rem;
-
-    @media(max-width: 411px){
-        right:7rem;
-        top: 35rem;
-    }
-
-    @media(min-width: 1500px){
-        left:45rem;
-        top:33rem;
-    }
-
-    @media(min-width: 1520px){
-        left:45rem;
-        top:33rem;
-    }
+    margin-left: 40%;
 `
 
 export const BotaoReprovar = styled.button`
     border: none;
-    position:absolute;
-    right: 47rem;
-    top: 33.75rem;
+    margin-left: 10%;
+`
 
-    @media(max-width: 411px){
-        right:17rem;
-        top:35rem;
-    }
-
-    @media(min-width: 1500px){
-        left:40rem;
-        top:33rem;
-    }
-
-    @media(min-width: 1520px){
-        left:35rem;
-        top:33rem;
-    }
-
-    @media(min-width: 1920px){
-        left:35rem;
-        top:33rem;
-    }
+export const ContainerBotao = styled.div`
+    display: flex;
+    flex-direction: row;
 `
 
 export const ComCoracao = styled.img`
-    position:absolute;
     width:5rem;
     height:5rem;
     border-radius: 3.125rem;
-    left:0.01rem;
     background-color: rgba(15,17,17,0);
-
     border: 1px solid #00FF80;
-
     &:active{
         border: none;
-    }
-
-    @media(max-width: 411px){
-        right:200px;
-        width:4rem;
-        height:4rem;
     }
 `
 
 export const Rejeitar = styled.img`
-    position:absolute;
     width:5rem;
     height:5rem;
     border-radius: 3.125rem;
-    right:1rem;
     background-color: rgba(15,17,17,0);
     border: 1px solid #FF0040;
-
     &:active{
         border: none;
-    }
-
-    @media(max-width: 411px){
-        right:1rem;
-        width:4rem;
-        height:4rem;
     }
 `
 

@@ -4,7 +4,13 @@ import { BASE_URL } from './constantes/requisicoes'
 import Card from './componentes/Card/Card'
 import Aprovados from './componentes/Aprovados/Aprovados'
 import GlobalEstilo from './Global/GlobalEstilo'
-import {Titulo, TrocaTela, Limpar, TamanhoMatchs, LimparMobile, TamanhoVassoura} from './styledApp'
+import {Titulo, 
+        TrocaTela, 
+        Limpar, 
+        TamanhoMatchs, 
+        LimparMobile, 
+        TamanhoVassoura
+} from './styledApp'
 import deadpool from './img/deadpoolAbracados.png'
 import vassoura from'./img/limpar_branco.png'
 import "./index.css";
