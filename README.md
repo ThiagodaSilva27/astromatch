@@ -2,6 +2,20 @@
 # Astromatch :green_heart:
 ## Projeto realizado na Labenu, escola de aprendizagem prática de programação. Baseado no aplicativo Tinder.
 
+### Tópicos
+   :small_blue_diamond: [Definições](#definições)
+   
+   :small_blue_diamond: [Tecnologias](#tecnologias)
+   
+   :small_blue_diamond: [Deploy da aplicação com Surge](#deploy-da-aplicação-com-surge-cyclone)
+   
+   :small_blue_diamond: [Como rodar a aplicação](#como-rodar-a-aplicação)
+   
+   :small_blue_diamond: [Linguagens, libs e API utilizadas](#linguagens-libs-e-api-utilizadas-books)
+   
+   :small_blue_diamond: [Imagens](#imagens)
+
+
 ### Definições:
 - Projeto baseado no aplicativo tinder;
 - Possui função de dar match e rejeitar;
@@ -49,7 +63,7 @@ Execute a aplicação:
 npm run start
 ```
 
-## Linguagens, libs e API utilizadas :books:
+## Linguagens libs e API utilizadas :books:
 
 - [React](https://pt-br.reactjs.org/)
 - [API](https://documenter.getpostman.com/view/7549981/SW12yx56?version=latest)
