@@ -13,7 +13,6 @@ import {
     Rejeitar,
     ContainerBotao
 } from './EstiloCard'
-import CircularProgress from '@material-ui/core/CircularProgress'
 import ImgCoracao from '../../img/coracao.png'
 import ImgRejeitar from '../../img/reprovar.jpg'
 
@@ -85,19 +84,12 @@ function Card() {
                     <p>Idade: {idade}</p>
                     <Descricao>Descrição: {descricao}</Descricao>
                     <ContainerBotao>
-                    <BotaoReprovar onClick={() => { reprovar(idM) }}>
-                        {loading ?
-                            <CircularProgress size={50} color="action" />
-                            :
-                            <Rejeitar src={ImgRejeitar} alt="reprovar" />}
-                    </BotaoReprovar>
-                    <BotaoAprovar onClick={() => { aprovar(idM) }}>
-                        {loading ?
-                            <CircularProgress size={50} />
-                            :
-                            <ComCoracao src={ImgCoracao} alt="coração" />}
-                    </BotaoAprovar>
-                    
+                        <BotaoReprovar onClick={() => { reprovar(idM) }}>
+                            <Rejeitar src={ImgRejeitar} alt="reprovar" />
+                        </BotaoReprovar>
+                        <BotaoAprovar onClick={() => { aprovar(idM) }}>
+                            <ComCoracao src={ImgCoracao} alt="coração" />
+                        </BotaoAprovar>
                     </ContainerBotao>
                 </CardTotal> :
 
